@@ -186,7 +186,11 @@ def _jupyterlab_variableinspector_default(o):
             if ( lang in Languages.scripts ) {
                 resolve( Languages.scripts[lang] );
             } else {
-                reject( "Language " + lang + " not supported yet!" );
+                resolve({
+                    initScript: "",
+                    queryCommand: "",
+                    matrixQueryCommand: ""
+                })
             }
         } );
 

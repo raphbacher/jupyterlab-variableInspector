@@ -190,6 +190,15 @@ export
                 this._inspected.emit( [title, update] );
                 break;
             default:
+                update = <IVariableInspector.IVariable[]>JSON.parse( "[]" );
+
+                title = {
+                    contextName: this._connector.context || "",
+                    kernelName : this._connector.kernelname || "",
+                    languageName : this._connector.kerneltype || ""
+                };
+
+                this._inspected.emit( [title, update] );
                 break;
         }
     };
